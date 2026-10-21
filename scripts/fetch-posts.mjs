@@ -97,7 +97,7 @@ const ghFetch = (url) => fetch(url, { headers: { 'User-Agent': UA, Accept: 'appl
 const ghJson = async (url) => { const r = await ghFetch(url); if (!r.ok) throw Object.assign(new Error(`${r.status} ${url}`), { status: r.status }); return r.json() }
 
 async function fetchMedium(handle) {
-  const r = await fetch(`https://medium.com/feed/${handle}`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20000) })
+  const r = await fetch(`https://medium.com/feed/${handle}`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(5000) })
   if (!r.ok) throw new Error(`Medium feed returned ${r.status}`)
   return parseMedium(await r.text(), handle)
 }
