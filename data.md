@@ -36,18 +36,18 @@
 ## Hero
 <!-- display_name is the huge outlined name behind your photo (first word / second word go on two lines on phones). -->
 - display_name: Mohiul Rabby
-- tagline: Software Engineer, Competitive Programmer & CSE Student at JKKNIU.
+- tagline: Software Engineer, Executive at Mid-Day Programming Club & CSE Student at JKKNIU.
 
 ## Summary
-It has always been my passion to learn new things, explore new ideas, and focus on self-development. I have consistently sought every available opportunity to improve my skills. Computer Science & Engineering undergraduate at Jatiya Kabi Kazi Nazrul Islam University (JKKNIU), passionate about software engineering, algorithmic problem solving, and building robust systems. Proficient in C, C++, Java, and Python with hands-on experience in full-stack web and database development. Dedicated to pursuing technical excellence with sincerity, honesty, and hard work.
+It has always been my passion to learn new things, explore new ideas, and focus on self-development. I have consistently sought every available opportunity to improve my skills. Computer Science & Engineering undergraduate at Jatiya Kabi Kazi Nazrul Islam University (JKKNIU), passionate about software engineering, algorithmic problem solving, and building robust systems. Executive at Mid-Day Programming Club, JKKNIU with hands-on experience across C, C++, Java, and Python. Dedicated to pursuing technical excellence with sincerity, honesty, and hard work.
 
 ## Overview
 <!-- Text for the tiles in the About / Overview section. The Education tile also reads the first row of the Education table. -->
 - title: Software engineer by passion, problem solver by discipline.
 - degree: B.Sc. in CSE
 - cgpa_max: 4
-- leadership_role: Active Leader & Problem Solver
-- leadership_text: Department of CSE, JKKNIU — competitive programmer & collaborative builder.
+- leadership_role: Executive
+- leadership_text: Mid-Day Programming Club, JKKNIU — organizing programming contests, mentoring students & technical leadership.
 - cp_title: CPS Academy Batch-3 · CodeChef & LeetCode
 - cp_text: Solved 350+ algorithmic problems across LeetCode, CodeChef, HackerRank, StopStalk & TryHackMe.
 
@@ -55,9 +55,9 @@ It has always been my passion to learn new things, explore new ideas, and focus 
 <!-- Value can be a number, or a number with a suffix (550+). Write "auto" to count every contest listed below. -->
 | Value | Label |
 |---|---|
-| 350+ | Problems solved across platforms |
+| 350+ | Coding problems solved |
+| 500+ | LinkedIn professional connections |
 | 100+ | LeetCode & CodeChef solves |
-| 5 | Perfect 5.00 GPA in Board Exams |
 | auto | Contests & achievements listed |
 
 ## Skills
@@ -65,7 +65,7 @@ It has always been my passion to learn new things, explore new ideas, and focus 
 C, C++, Java, Python, SQL, JavaScript, HTML5/CSS3, TypeScript
 
 ### Tools
-Git, GitHub, VS Code, Code::Blocks, Linux CLI, Cisco Packet Tracer, MySQL
+Git, GitHub, VS Code, IntelliJ IDEA, Code::Blocks, Linux CLI, Cisco Packet Tracer, MySQL, Replit
 
 ### Security
 TryHackMe, HackTheBox, Web Security, System Security, Network Basics
@@ -80,7 +80,7 @@ Linux (Ubuntu), Windows
 | gold | 5.00 | HSC GPA 5.00 | Agricultural Univ. College |
 | gold | 5.00 | SSC GPA 5.00 | Shaheed Smriti Bidyapeeth |
 | gold | 5.00 | JSC GPA 5.00 | Shaheed Smriti Bidyapeeth |
-| teal | Batch-3 | CPS Academy CP | Competitive Programming |
+| teal | Exec | Mid-Day Prog. Club | Executive Leadership |
 | indigo | Solver | CodeChef & LeetCode | Algorithmic Problem Solving |
 | bronze | Active | TryHackMe & HTB | Cyber Security Labs |
 
@@ -125,7 +125,7 @@ Linux (Ubuntu), Windows
 <!-- The first row is your current degree (used in the Overview tile). -->
 | Degree | School | Period | Score |
 |---|---|---|---|
-| B.Sc. Computer Science and Engineering | Jatiya Kabi Kazi Nazrul Islam University | 09/2023 – Present | CGPA 3.80 |
+| B.Sc. Computer Science and Engineering | Jatiya Kabi Kazi Nazrul Islam University | Sep 2023 – Apr 2027 | CGPA 3.80 |
 | Higher Secondary Certificate (HSC) | Agricultural University College, Mymensingh | 01/2020 – 01/2022 | GPA 5.00 |
 | Secondary School Certificate (SSC) | Shaheed Smriti Bidyapeeth, Kutub Pur, Kendua | 01/2019 – 01/2020 | GPA 5.00 |
 | Junior School Certificate (JSC) | Shaheed Smriti Bidyapeeth, Kutub Pur, Kendua | 01/2018 – 01/2019 | GPA 5.00 |
@@ -133,8 +133,9 @@ Linux (Ubuntu), Windows
 ## Leadership
 | Role | Organization | Period |
 |---|---|---|
-| Active Member & CSE Representative | Department of CSE, JKKNIU | 2023 – Present |
-| Competitive Programming Enthusiast | CPS Academy Community | 2024 – Present |
+| Executive | Mid-Day Programming Club, JKKNIU | Oct 2025 – Present |
+| Active Member & CSE Representative | Department of CSE, JKKNIU | Sep 2023 – Present |
+| Competitive Programming Enthusiast | CPS Academy Community | Jan 2024 – Present |
 | Student Coordinator | Shaheed Smriti Bidyapeeth Alumni | 2020 – 2022 |
 
 ## Projects

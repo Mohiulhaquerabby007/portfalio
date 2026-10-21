@@ -22,3 +22,4 @@ SIMS follows a layered Model-View-Controller (MVC) pattern:
 - **Role-Based Access**: Distinct permission boundaries for department admins and students.
 
 Building SIMS provided deep practical experience in relational database normalization, exception handling, and robust object-oriented software engineering.
+

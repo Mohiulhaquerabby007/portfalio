@@ -18,3 +18,4 @@ public:
 - **Prefer Composition over Inheritance**: Fragile base classes create maintenance overhead; inject interfaces wherever possible.
 - **Enforce Encapsulation**: Guard class invariants and expose state solely through meaningful methods.
 - **Leverage Strong Typing**: Let the compiler catch domain errors before runtime.
+

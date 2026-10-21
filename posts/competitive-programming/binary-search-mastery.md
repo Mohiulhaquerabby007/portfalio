@@ -36,3 +36,4 @@ while (low <= high) {
 3. **Double check the transition**: Verify whether you need the first `True` or the last `False`.
 
 Continuous practice on CodeChef and LeetCode reinforces this intuition until designing the `check()` predicate becomes second nature.
+
