@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.vite/
+
+# logs
+*.log
+npm-debug.log*
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# raw photos and background-removal outputs (keep only the final public/me.png)
+IMG_*.jpg
+IMG_*.jpeg
+IMG_*.png
+*-nobg.png
+*-depth.png
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code local files
+.claude/

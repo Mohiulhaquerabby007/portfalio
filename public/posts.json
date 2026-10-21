@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-10-21T20:21:47.676Z",
+  "sources": {
+    "local": {
+      "ok": true,
+      "count": 3
+    },
+    "medium": {
+      "handle": "@mohiulhaquerabby",
+      "ok": true,
+      "count": 0
+    }
+  },
+  "posts": [
+    {
+      "id": "github-competitive-programming-binary-search-mastery",
+      "source": "github",
+      "slug": "competitive-programming-binary-search-mastery",
+      "title": "Mastering Binary Search & Monotonic Predicates",
+      "url": "https://github.com/Mohiulhaquerabby007/portfolio/blob/main/posts/competitive-programming/binary-search-mastery.md",
+      "date": "2024-10-15T00:00:00.000Z",
+      "summary": "A practical guide to identifying monotonic search spaces, avoiding off-by-one errors, and solving tricky boundary search problems in competitive programming.",
+      "tags": [
+        "cp",
+        "algorithms",
+        "binary-search",
+        "c++"
+      ],
+      "event": "CPS Academy",
+      "thumbnail": null,
+      "readingTime": 1
+    },
+    {
+      "id": "github-systems-student-information-management-system",
+      "source": "github",
+      "slug": "systems-student-information-management-system",
+      "title": "Designing the Student Information Management System (SIMS)",
+      "url": "https://github.com/Mohiulhaquerabby007/portfolio/blob/main/posts/systems/student-information-management-system.md",
+      "date": "2024-09-20T00:00:00.000Z",
+      "summary": "System architecture, relational schema, and modular Java design patterns used to build the Student Information Management System (SIMS).",
+      "tags": [
+        "java",
+        "oop",
+        "database",
+        "systems"
+      ],
+      "event": "Academic Project",
+      "thumbnail": null,
+      "readingTime": 1
+    },
+    {
+      "id": "github-software-engineering-object-oriented-principles",
+      "source": "github",
+      "slug": "software-engineering-object-oriented-principles",
+      "title": "Object-Oriented Design: Bridging C++ and Java",
+      "url": "https://github.com/Mohiulhaquerabby007/portfolio/blob/main/posts/software-engineering/object-oriented-principles.md",
+      "date": "2024-08-10T00:00:00.000Z",
+      "summary": "Contrasting object-oriented paradigms in modern C++ and Java: memory management, polymorphism, and interface segregation.",
+      "tags": [
+        "java",
+        "c++",
+        "oop",
+        "software-engineering"
+      ],
+      "event": "Engineering Notes",
+      "thumbnail": null,
+      "readingTime": 1
+    }
+  ]
+}

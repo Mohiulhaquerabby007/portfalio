@@ -1,0 +1,19 @@
+# OPTIONAL — instant blog updates when you push a writeup.
+# Copy this file into the *writeup* repo as .github/workflows/notify-portfolio.yml.
+# Without it the blog still updates, just on the next hourly refresh.
+#
+# One-time setup:
+#   1. Vercel > your project > Settings > Git > Deploy Hooks > create a hook (branch: main). Copy the URL.
+#   2. In the *writeup* repo: Settings > Secrets and variables > Actions > New repository secret
+#      Name: VERCEL_DEPLOY_HOOK   Value: the URL (treat it like a password)
+name: Notify portfolio
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

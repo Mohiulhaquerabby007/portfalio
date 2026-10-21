@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark is the default; [data-theme=light] overrides it. Values are RGB triplets. */
+:root, [data-theme='dark'] {
+  color-scheme: dark;
+  --paper: 10 10 11; --ink: 244 244 245; --surface: 19 19 22;
+  --accent: 45 212 191; --accent-dark: 94 234 212; --accent-soft: 19 78 74;
+  --s50: 24 24 27; --s100: 31 31 34; --s200: 44 44 48; --s300: 63 63 70; --s400: 139 139 148;
+  --s500: 161 161 170; --s600: 196 196 204; --s700: 212 212 216; --s800: 228 228 231; --s900: 244 244 245; --s950: 250 250 250;
+  --dot: 39 39 42; --band: 22 23 27;
+}
+[data-theme='light'] {
+  color-scheme: light;
+  --paper: 250 249 247; --ink: 28 25 23; --surface: 255 255 255;
+  --accent: 15 118 110; --accent-dark: 17 94 89; --accent-soft: 204 251 241;
+  --s50: 250 250 249; --s100: 245 245 244; --s200: 231 229 228; --s300: 214 211 209; --s400: 168 162 158;
+  --s500: 120 113 108; --s600: 87 83 78; --s700: 68 64 60; --s800: 41 37 36; --s900: 28 25 23; --s950: 12 10 9;
+  --dot: 214 211 209; --band: 12 10 9;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+body { @apply bg-paper font-sans text-ink antialiased transition-colors duration-300; }
+::selection { background: rgb(var(--accent) / .3); }
+
+@layer components {
+  .h2 { @apply font-serif text-3xl sm:text-4xl font-semibold tracking-tight md:text-5xl; }
+  .label { @apply font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-stone-500; }
+  .kicker { @apply mb-3 inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent before:h-px before:w-8 before:bg-accent; }
+  .tile { @apply rounded-3xl border border-stone-200/80 bg-surface p-6 shadow-[0_1px_0_rgba(0,0,0,.02)] transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-900/5; }
+  .chip { @apply rounded-full border border-stone-200 bg-stone-50 px-3.5 py-1.5 text-sm font-medium text-stone-700 transition hover:border-accent/40 hover:bg-accent-soft/60; }
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition; }
+}
+
+.bg-dots { background-image: radial-gradient(rgb(var(--dot)) 1px, transparent 1px); background-size: 22px 22px; }
+.mask-fade { mask-image: radial-gradient(ellipse at 60% 40%, #000 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 60% 40%, #000 20%, transparent 70%); }
+.marquee:hover .animate-marquee { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee, .animate-float { animation: none; }
+}
+
+/* Contest names flying out from behind the hero photo (small/far -> big/near, fading) */
+.flight { --k: 1; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); }
+.flight-item {
+  position: absolute; left: 50%; top: 45%; white-space: nowrap; font-size: 1.1rem; opacity: 0; text-shadow: 0 2px 14px rgb(var(--paper) / .9);
+  animation: fly 12s cubic-bezier(.45, 0, .9, .6) infinite;
+}
+@keyframes fly {
+  0%   { transform: translate(-50%, -50%) scale(.12); opacity: 0; }
+  10%  { opacity: 1; }
+  70%  { opacity: .75; }
+  100% { transform: translate(calc(-50% + var(--tx) * var(--k)), calc(-50% + var(--ty) * var(--k))) scale(2.8); opacity: 0; }
+}
+.photo-fade { -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); mask-image: linear-gradient(to bottom, #000 82%, transparent); }
+@media (max-width: 640px) { .flight { --k: .5; } .flight-item { font-size: .95rem; } }
+@media (prefers-reduced-motion: reduce) { .flight { display: none; } }
+
+/* Huge outlined name behind the portrait */
+.giant {
+  font-family: Oxanium, 'Arial Black', sans-serif; font-weight: 800; text-transform: uppercase; line-height: .95; letter-spacing: .02em;
+  font-size: 18vw; color: rgb(var(--s100)); -webkit-text-stroke: 3px rgb(var(--s300)); paint-order: stroke fill; /* stroke under fill hides inner contour overlaps */
+}
+@media (min-width: 768px) { .giant { font-size: min(9.6vw, 11rem); line-height: .9; } }
+.medal { transition: transform .3s; }
+.medal:hover { transform: translateY(-6px) rotate(-2deg); }
+
+/* Markdown rendering for /blog/:slug */
+.md { @apply text-[1.0625rem] leading-relaxed text-stone-700; }
+.md > * + * { @apply mt-5; }
+.md h1, .md h2, .md h3, .md h4 { @apply font-serif font-semibold leading-snug text-ink; }
+.md h1 { @apply mt-10 text-3xl; } .md h2 { @apply mt-10 text-2xl; } .md h3 { @apply mt-8 text-xl; } .md h4 { @apply mt-6 text-lg; }
+.md a { @apply text-accent underline underline-offset-4 hover:text-accent-dark; }
+.md ul { @apply list-disc pl-6; } .md ol { @apply list-decimal pl-6; } .md li + li { @apply mt-1.5; }
+.md blockquote { @apply border-l-4 border-accent/60 pl-4 italic text-stone-600; }
+.md code { @apply rounded bg-stone-100 px-1.5 py-0.5 font-mono text-[0.88em] text-stone-800; }
+.md pre { @apply overflow-x-auto rounded-xl border border-stone-200 bg-stone-100 p-4 text-sm leading-relaxed; }
+.md pre code { @apply bg-transparent p-0; }
+.md img { @apply h-auto max-w-full rounded-xl border border-stone-200; }
+.md hr { @apply border-stone-200; }
+.md table { @apply block w-full overflow-x-auto text-sm; } .md th, .md td { @apply border border-stone-200 px-3 py-2 text-left; } .md th { @apply bg-stone-100 font-semibold; }
