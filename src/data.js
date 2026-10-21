@@ -15,6 +15,7 @@ export const COURSES = raw.courses
 export const EDUCATION = raw.education
 export const ORGANIZATIONS = raw.organizations
 export const PROJECTS = raw.projects
+export const ICPC = raw.icpc
 
 // First row of the Education table = current degree; its score ("CGPA 3.65") feeds the ring in the Overview tile.
 export const OVERVIEW = {
@@ -31,9 +32,9 @@ export const GROUP_COLOR = new Proxy(COLORS, { get: (t, k) => t[k] || '#64748b' 
 export const SECTIONS = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'credentials', label: 'Credentials' },
+  { id: 'icpc', label: 'CP & ICPC' },
   { id: 'projects', label: 'Projects' },
+  { id: 'credentials', label: 'Credentials' },
   { id: 'contact', label: 'Contact' },
 ]

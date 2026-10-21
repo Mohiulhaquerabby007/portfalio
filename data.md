@@ -106,6 +106,7 @@ Linux (Ubuntu), Windows
 ### Programming
 | Event | Result | Date |
 |---|---|---|
+| ICPC Asia Dhaka Regional Preliminary (BUBT) | Rank 199 · Solved 3 (JKKNIU Picnic Team) | 2025 |
 | Codeforces Rated Contests (Div. 2 & Div. 3) | Max Rating 1128 | 2024–2026 |
 | Codeforces Problemset Archive | 337 Problems Solved | 2024–Present |
 | CPS Academy Batch-3 Contest Series | Active Contestant | Jan 2024 – Present |
@@ -149,3 +150,22 @@ Linux (Ubuntu), Windows
 | HealthConcern | Modern healthcare web portal for appointment tracking, patient medical records, and doctor consultations. | TypeScript, React, Node.js | https://github.com/Mohiulhaquerabby007/HealthConcern |
 | Pioneer Bank | An interactive online banking simulator with account management, transaction logging, and real-time balance calculations. | JavaScript, HTML5, CSS3 | https://github.com/Mohiulhaquerabby007/pioneer-bank |
 | Algorithmic Problem Solving Repository | Solutions to 350+ data structures and algorithmic challenges across LeetCode, CodeChef, and Codeforces. | C++, Python, Algorithms | https://github.com/Mohiulhaquerabby007 |
+
+## ICPC
+<!-- Verified official participation and standings from https://icpc.bubt.edu.bd/standing.php -->
+- team: JKKNIU Picnic Team
+- university: Jatiya Kabi Kazi Nazrul Islam University (JKKNIU)
+- contest: ICPC Asia Dhaka Regional Contest 2025 (Preliminary)
+- host: Bangladesh University of Business and Technology (BUBT)
+- rank: 199
+- total_teams: 1717
+- solved: 3
+- penalty: 399
+- team_id: 1112902
+- status: Qualified for Onsite Regional Round
+- standings_url: https://icpc.bubt.edu.bd/standing.php
+- member_1: Mohiul Haque Rabby (Self)
+- member_2: Teammate 1 [Needs verification]
+- member_3: Teammate 2 [Needs verification]
+- coach: Faculty Coach [Needs verification]
+

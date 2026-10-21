@@ -29,7 +29,7 @@ const nonEmpty = (body) => body.filter((l) => l.text.trim())
 function parseKV(body, file) {
   const out = {}
   for (const { text, line } of nonEmpty(body)) {
-    const m = text.match(/^\s*(?:[-*]\s+)?([A-Za-z_ ]+?)\s*:\s*(.*)$/)
+    const m = text.match(/^\s*(?:[-*]\s+)?([A-Za-z0-9_ ]+?)\s*:\s*(.*)$/)
     if (!m) fail(file, line, `expected "- key: value", got "${text.trim()}"`)
     out[norm(m[1])] = m[2].trim()
   }
@@ -107,5 +107,6 @@ export function parseData(raw, file = 'data.md') {
     courses: parseList(need(s, 'courses', file).body),
     education: parseTable(need(s, 'education', file).body, ['Degree', 'School', 'Period', 'Score'], file, 'Education').map((r) => ({ degree: r.degree, school: r.school, period: r.period, score: r.score })),
     organizations: parseTable(need(s, 'leadership', file).body, ['Role', 'Organization', 'Period'], file, 'Leadership').map((r) => ({ role: r.role, org: r.organization, period: r.period })),
+    icpc: s.icpc ? parseKV(s.icpc.body, file) : null,
   }
 }

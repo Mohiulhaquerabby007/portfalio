@@ -1,5 +1,7 @@
 import LatestPosts from '../components/LatestPosts'
-import { About, Achievements, Contact, Credentials, Hero, Marquee, Projects } from '../components/Sections'
+import {
+  About, Achievements, CompetitiveProgramming, Contact, Credentials, Hero, Marquee, Projects,
+} from '../components/Sections'
 
 export default function Home() {
   return (
@@ -8,8 +10,9 @@ export default function Home() {
       <Marquee />
       <About />
       <Achievements />
-      <Credentials />
+      <CompetitiveProgramming />
       <Projects />
+      <Credentials />
       <LatestPosts />
       <Contact />
     </>

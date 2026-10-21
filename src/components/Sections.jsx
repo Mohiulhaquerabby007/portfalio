@@ -1,11 +1,11 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { animate, motion, useInView } from 'framer-motion'
 import {
-  Activity, ArrowUpRight, Award, Building2, ClipboardCheck, Database, Landmark, GraduationCap, Github, Linkedin, Mail, MapPin,
-  Send, Smartphone, Shield, Wrench, Code2, Monitor, Terminal, Phone,
+  Activity, ArrowUpRight, Award, Building2, CheckCircle2, ClipboardCheck, Clock, Database, Flame, Landmark, GraduationCap, Github, Linkedin, Mail, MapPin,
+  Send, Smartphone, Shield, Trophy, Users, Wrench, Code2, Monitor, Terminal, Phone,
 } from 'lucide-react'
 import {
-  CERTIFICATIONS, CONTACT_EMAIL, CONTESTS, COURSES, EDUCATION, GROUP_COLOR, HERO, MEDALS, ORGANIZATIONS, OVERVIEW, PROFILE, PROJECTS,
+  CERTIFICATIONS, CONTACT_EMAIL, CONTESTS, COURSES, EDUCATION, GROUP_COLOR, HERO, ICPC, MEDALS, ORGANIZATIONS, OVERVIEW, PROFILE, PROJECTS,
   SKILLS, SKILL_GROUPS, STATS,
 } from '../data'
 
@@ -358,12 +358,295 @@ export const Achievements = () => (
   </Wrap>
 )
 
-/* ───────── § 03 Credentials ───────── */
+/* ───────── ICPC Balloons Visual ───────── */
+export const IcpcLogo = ({ className = 'h-10 w-10' }) => (
+  <svg viewBox="0 0 100 100" fill="none" className={className} role="img" aria-label="ICPC Balloons">
+    <ellipse cx="32" cy="38" rx="16" ry="22" fill="#0284c7" />
+    <polygon points="32,60 29,64 35,64" fill="#0284c7" />
+    <path d="M32 64 Q31 76 50 88" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.4" fill="none" />
+
+    <ellipse cx="50" cy="30" rx="18" ry="24" fill="#e11d48" />
+    <polygon points="50,54 47,58 53,58" fill="#e11d48" />
+    <path d="M50 58 L50 88" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.4" fill="none" />
+
+    <ellipse cx="68" cy="38" rx="16" ry="22" fill="#f59e0b" />
+    <polygon points="68,60 65,64 71,64" fill="#f59e0b" />
+    <path d="M68 64 Q69 76 50 88" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.4" fill="none" />
+
+    <ellipse cx="27" cy="30" rx="3.5" ry="7" fill="#ffffff" opacity="0.45" transform="rotate(-15 27 30)" />
+    <ellipse cx="45" cy="22" rx="4" ry="8" fill="#ffffff" opacity="0.45" transform="rotate(-15 45 22)" />
+    <ellipse cx="63" cy="30" rx="3.5" ry="7" fill="#ffffff" opacity="0.45" transform="rotate(-15 63 30)" />
+
+    <circle cx="50" cy="88" r="2.5" fill="currentColor" opacity="0.6" />
+  </svg>
+)
+
+/* ───────── § 03 Competitive Programming & ICPC ───────── */
+export const CompetitiveProgramming = () => {
+  const icpc = ICPC || {
+    team: 'JKKNIU Picnic Team',
+    university: 'Jatiya Kabi Kazi Nazrul Islam University (JKKNIU)',
+    contest: 'ICPC Asia Dhaka Regional Contest 2025 (Preliminary)',
+    host: 'Bangladesh University of Business and Technology (BUBT)',
+    rank: '199',
+    total_teams: '1717',
+    solved: '3',
+    penalty: '399',
+    team_id: '1112902',
+    status: 'Qualified for Onsite Regional Round',
+    standings_url: 'https://icpc.bubt.edu.bd/standing.php',
+    member_1: 'Mohiul Haque Rabby (Self)',
+    member_2: 'Teammate 1 [Needs verification]',
+    member_3: 'Teammate 2 [Needs verification]',
+    coach: 'Faculty Coach [Needs verification]',
+  }
+
+  return (
+    <Wrap
+      id="icpc"
+      num="03"
+      kicker="Competitive Programming"
+      title="Competitive Programming & ICPC."
+      intro="Official standing from the ICPC Asia Dhaka Regional Contest, university team achievements, and algorithmic contest profiles."
+    >
+      <div className="space-y-8">
+        {/* Main ICPC Achievement Card */}
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-stone-200/90 bg-surface p-6 shadow-lg transition duration-300 hover:shadow-2xl sm:p-8 md:p-10">
+            {/* Ambient subtle glow */}
+            <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-accent/15 blur-3xl" aria-hidden />
+            <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" aria-hidden />
+
+            <div className="relative">
+              {/* Header row: Branding + Status Badge + Official Link */}
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl border border-stone-200 bg-stone-50 shadow-sm">
+                    <IcpcLogo className="h-10 w-10" />
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="label font-bold text-accent">ICPC Asia Dhaka Regional 2025</span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-600">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                        {icpc.status || 'Qualified for Onsite Round'}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-stone-500">Host: {icpc.host || 'BUBT'}</p>
+                  </div>
+                </div>
+
+                <a
+                  href={icpc.standings_url || 'https://icpc.bubt.edu.bd/standing.php'}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn !py-2.5 bg-ink text-paper hover:bg-teal-800"
+                >
+                  <Trophy size={16} /> View Official Standings <ArrowUpRight size={14} />
+                </a>
+              </div>
+
+              {/* Team Title */}
+              <div className="mt-6">
+                <p className="label">University Team Standing</p>
+                <h3 className="font-serif text-2xl font-bold tracking-tight text-ink sm:text-3xl md:text-4xl">
+                  {icpc.team}
+                </h3>
+                <p className="mt-1.5 text-base font-medium text-stone-600">
+                  {icpc.university}
+                </p>
+              </div>
+
+              {/* Verified Performance Stats Grid */}
+              <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+                <div className="rounded-2xl border border-stone-200/80 bg-stone-50/70 p-4 shadow-sm">
+                  <p className="label flex items-center gap-1.5"><Trophy size={13} className="text-amber-500" /> Official Rank</p>
+                  <p className="mt-2 font-serif text-3xl font-extrabold text-ink sm:text-4xl">
+                    {icpc.rank}
+                    <span className="text-base font-normal text-stone-400"> / {icpc.total_teams || '1717'}</span>
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-emerald-600">Top ~11.5% nationwide</p>
+                </div>
+
+                <div className="rounded-2xl border border-stone-200/80 bg-stone-50/70 p-4 shadow-sm">
+                  <p className="label flex items-center gap-1.5"><CheckCircle2 size={13} className="text-emerald-500" /> Solved</p>
+                  <p className="mt-2 font-serif text-3xl font-extrabold text-ink sm:text-4xl">
+                    {icpc.solved}
+                    <span className="text-base font-normal text-stone-400"> problems</span>
+                  </p>
+                  <p className="mt-1 text-xs text-stone-500">Accepted Solutions</p>
+                </div>
+
+                <div className="rounded-2xl border border-stone-200/80 bg-stone-50/70 p-4 shadow-sm">
+                  <p className="label flex items-center gap-1.5"><Clock size={13} className="text-rose-500" /> Penalty</p>
+                  <p className="mt-2 font-serif text-3xl font-extrabold text-ink sm:text-4xl">
+                    {icpc.penalty}
+                  </p>
+                  <p className="mt-1 text-xs text-stone-500">Time penalty points</p>
+                </div>
+
+                <div className="rounded-2xl border border-stone-200/80 bg-stone-50/70 p-4 shadow-sm">
+                  <p className="label flex items-center gap-1.5"><Shield size={13} className="text-accent" /> Team ID</p>
+                  <p className="mt-2 font-serif text-2xl font-extrabold text-ink sm:text-3xl">
+                    {icpc.team_id || '1112902'}
+                  </p>
+                  <p className="mt-1 text-xs text-stone-500">Official BUBT ID</p>
+                </div>
+              </div>
+
+              {/* Roster & Verification Footer */}
+              <div className="mt-8 rounded-2xl border border-stone-200/70 bg-stone-50/50 p-4 sm:p-5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <Users size={16} className="text-accent" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-stone-600">Team Roster</span>
+                  </div>
+                  <span className="text-xs text-stone-400">3 Contestants · 1 Coach</span>
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="chip !border-accent/40 !bg-accent-soft/40 font-semibold text-accent-dark">
+                    ★ {icpc.member_1 || 'Mohiul Haque Rabby'}
+                  </span>
+                  {icpc.member_2 && (
+                    <span className="chip border-dashed text-stone-600">
+                      {icpc.member_2}
+                    </span>
+                  )}
+                  {icpc.member_3 && (
+                    <span className="chip border-dashed text-stone-600">
+                      {icpc.member_3}
+                    </span>
+                  )}
+                  {icpc.coach && (
+                    <span className="chip border-dashed text-stone-500">
+                      Coach: {icpc.coach}
+                    </span>
+                  )}
+                </div>
+
+                <p className="mt-3 text-xs text-stone-500">
+                  <span className="font-semibold text-stone-600">Official Source Verification:</span> Results verified directly from the <a href="https://icpc.bubt.edu.bd/standing.php" target="_blank" rel="noreferrer" className="underline hover:text-accent">BUBT ICPC Preliminary Standings</a> (Row #199).
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Companion Row: Personal CP Profile & Multi-Platform Solves */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Codeforces Profile Card */}
+          <Reveal delay={0.1}>
+            <div className="tile h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <CodeforcesIcon size={22} />
+                    <span className="font-serif text-lg font-semibold text-ink">Codeforces</span>
+                  </div>
+                  <span className="rounded-full bg-stone-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-stone-700">
+                    Max: 1128
+                  </span>
+                </div>
+
+                <p className="mt-4 font-mono text-xl font-bold text-ink">
+                  @{PROFILE.handle || 'Mohiul_Haque_Rabby'}
+                </p>
+                <p className="mt-2 text-sm text-stone-600">
+                  Active rated contestant in Div. 2 & Div. 3 rounds. Continuously solving problems covering Dynamic Programming, Math, Number Theory, Graphs, and Greedy algorithms.
+                </p>
+
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border border-stone-200 bg-surface p-3">
+                    <p className="label">Total Solved</p>
+                    <p className="mt-1 font-serif text-2xl font-bold text-accent-dark">337+</p>
+                  </div>
+                  <div className="rounded-xl border border-stone-200 bg-surface p-3">
+                    <p className="label">Current Status</p>
+                    <p className="mt-1 font-serif text-2xl font-bold text-ink">Active</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500">Continuous problem solving</span>
+                <a
+                  href={PROFILE.codeforces || 'https://codeforces.com/profile/Mohiul_Haque_Rabby'}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-dark"
+                >
+                  Codeforces Profile <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Training & Multi-Platform Solves */}
+          <Reveal delay={0.15}>
+            <div className="tile h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <Flame size={20} className="text-orange-500" />
+                    <span className="font-serif text-lg font-semibold text-ink">Training & Platforms</span>
+                  </div>
+                  <span className="rounded-full bg-orange-500/10 px-2.5 py-0.5 text-xs font-semibold text-orange-600">
+                    CPS Academy Batch-3
+                  </span>
+                </div>
+
+                <p className="mt-4 text-sm text-stone-600">
+                  Rigorous competitive programming training through CPS Academy Batch-3. Solved 350+ problems across leading platforms with strong foundational grasp of time complexity and algorithm design.
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {PROFILE.codeforces && (
+                    <a href={PROFILE.codeforces} target="_blank" rel="noreferrer" className="chip hover:border-accent hover:text-accent">
+                      Codeforces ↗
+                    </a>
+                  )}
+                  {PROFILE.leetcode && (
+                    <a href={PROFILE.leetcode} target="_blank" rel="noreferrer" className="chip hover:border-accent hover:text-accent">
+                      LeetCode ↗
+                    </a>
+                  )}
+                  {PROFILE.codechef && (
+                    <a href={PROFILE.codechef} target="_blank" rel="noreferrer" className="chip hover:border-accent hover:text-accent">
+                      CodeChef ↗
+                    </a>
+                  )}
+                  {PROFILE.stopstalk && (
+                    <a href={PROFILE.stopstalk} target="_blank" rel="noreferrer" className="chip hover:border-accent hover:text-accent">
+                      StopStalk ↗
+                    </a>
+                  )}
+                  {PROFILE.hackerrank && (
+                    <a href={PROFILE.hackerrank} target="_blank" rel="noreferrer" className="chip hover:border-accent hover:text-accent">
+                      HackerRank ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+                <span className="text-xs text-stone-500">Executive, Mid-Day Programming Club</span>
+                <span className="font-mono text-xs font-semibold text-stone-600">350+ Global Solves</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </Wrap>
+  )
+}
+
+/* ───────── § 05 Credentials ───────── */
 const orgGroups = () => Object.entries(ORGANIZATIONS.reduce((m, o) => ((m[o.org] ||= []).push(o), m), {}))
 
 export const Credentials = () => (
   <div className="bg-stone-100/70">
-    <Wrap id="credentials" num="03" kicker="Appendix" title="Certified, educated, and leading.">
+    <Wrap id="credentials" num="05" kicker="Background" title="Certified, educated, and leading.">
       <h3 className="mb-4 flex items-center gap-2 font-serif text-xl font-semibold"><Award size={20} className="text-accent" /> Appendix A — Certifications</h3>
       <div className="grid gap-4 md:grid-cols-3">
         {CERTIFICATIONS.map((c, i) => (
