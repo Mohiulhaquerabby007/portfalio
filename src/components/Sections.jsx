@@ -1,12 +1,12 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { animate, motion, useInView } from 'framer-motion'
 import {
-  Activity, ArrowUpRight, Award, Building2, CheckCircle2, ClipboardCheck, Clock, Database, Flame, Landmark, GraduationCap, Github, Linkedin, Mail, MapPin,
+  Activity, ArrowUpRight, Award, BookOpen, Building2, Calendar, CheckCircle2, ClipboardCheck, Clock, Database, Flame, Landmark, GraduationCap, Github, Linkedin, Mail, MapPin,
   Send, Smartphone, Shield, Trophy, Users, Wrench, Code2, Monitor, Terminal, Phone,
 } from 'lucide-react'
 import {
   CERTIFICATIONS, CONTACT_EMAIL, CONTESTS, COURSES, EDUCATION, GROUP_COLOR, HERO, ICPC, MEDALS, ORGANIZATIONS, OVERVIEW, PROFILE, PROJECTS,
-  SKILLS, SKILL_GROUPS, STATS,
+  RESEARCH, SKILLS, SKILL_GROUPS, STATS,
 } from '../data'
 
 export const CodeforcesIcon = ({ size = 16, className = '' }) => (
@@ -358,6 +358,176 @@ export const Achievements = () => (
   </Wrap>
 )
 
+/* ───────── IEEE Conference Emblem ───────── */
+export const IeeeEmblem = ({ className = 'h-10 w-10' }) => (
+  <svg viewBox="0 0 64 64" fill="none" className={className} role="img" aria-label="IEEE Conference Emblem">
+    <rect width="64" height="64" rx="14" fill="#00629B" />
+    <path d="M32 10 L52 32 L32 54 L12 32 Z" stroke="#ffffff" strokeWidth="2.5" strokeLinejoin="round" fill="none" />
+    <circle cx="32" cy="32" r="8" stroke="#ffffff" strokeWidth="2" fill="none" />
+    <path d="M22 32 L42 32" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M32 22 L32 42" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+    <path d="M25 25 L39 39" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.8" />
+  </svg>
+)
+
+/* ───────── § 03 Research & Publications ───────── */
+export const Research = () => {
+  const r = RESEARCH || {
+    title: 'IoT-Based Low-Cost Intelligent Air-Quality Monitoring and Self-Calibrated Autonomous Purification System',
+    paper_id: 'IEEE_i-COSTE_2026_5374',
+    conference: 'IEEE i-COSTE 2026 — 12th IEEE International Conference on Sustainable Technology and Engineering',
+    conference_short: 'IEEE i-COSTE 2026',
+    paper_type: 'Full Research Paper',
+    status: 'Accepted',
+    submission_date: 'September 5, 2026',
+    conference_dates: 'November 1–3, 2026',
+    venue: "Best Western Heritage, Cox's Bazar, Bangladesh",
+    host: 'Bangladesh University of Business and Technology (BUBT)',
+    author_1: 'Md. Saurob Bhuyan',
+    author_2: 'F.R.M Mohiul Haque Bhuiyan (Mohiul Haque Rabby)',
+    author_3: 'Md. Sujan Ali',
+    conference_url: 'https://i-coste.org/',
+    tags: 'IoT, ESP32-S3, Air Quality, EPA AQI, Autonomous Purification, Green Computing',
+    abstract: 'Proposed an IoT-based, low-cost intelligent air-quality monitoring and autonomous purification system powered by an ESP32-S3 microcontroller. The architecture monitors multiple atmospheric pollutants, applies standard EPA-based Air Quality Index (AQI) calculations, incorporates real-time sensor-health monitoring, and drives multi-stage autonomous purification with solar-first power management and remote telemetry.',
+  }
+
+  const tags = r.tags ? r.tags.split(',').map((t) => t.trim()) : []
+
+  return (
+    <Wrap
+      id="research"
+      num="03"
+      kicker="Research & Publications"
+      title="Academic Publications & Applied Research."
+      intro="Peer-reviewed research and applied innovations in IoT, environmental sensing, and sustainable computing."
+    >
+      <Reveal>
+        <article className="relative overflow-hidden rounded-3xl border border-stone-200/90 bg-surface p-6 shadow-xl transition duration-300 hover:shadow-2xl sm:p-8 md:p-10">
+          {/* Subtle ambient lighting */}
+          <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#00629B]/15 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+
+          <div className="relative">
+            {/* Top metadata row */}
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="flex items-center gap-3.5">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-stone-200 bg-stone-50 shadow-sm">
+                  <IeeeEmblem className="h-10 w-10" />
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="label font-bold text-[#00629B] dark:text-sky-400">{r.conference_short || 'IEEE i-COSTE 2026'}</span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-600">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                      {r.status || 'Accepted'}
+                    </span>
+                    <span className="chip !py-0.5 !text-xs font-mono text-stone-600">
+                      {r.paper_type || 'Full Research Paper'}
+                    </span>
+                  </div>
+                  <p className="mt-1 font-mono text-xs text-stone-400">
+                    Paper ID: <span className="font-semibold text-stone-700">{r.paper_id}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href={r.conference_url || 'https://i-coste.org/'}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn !py-2.5 bg-ink text-paper hover:bg-teal-800"
+                >
+                  <BookOpen size={16} /> Official Conference Site <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            {/* Paper Title */}
+            <div className="mt-6">
+              <p className="label">Accepted Research Paper</p>
+              <h3 className="font-serif text-2xl font-bold leading-snug tracking-tight text-ink sm:text-3xl md:text-4xl">
+                {r.title}
+              </h3>
+              <p className="mt-2 text-sm text-stone-600">
+                {r.conference}
+              </p>
+            </div>
+
+            {/* Authors Box */}
+            <div className="mt-6 rounded-2xl border border-stone-200/80 bg-stone-50/60 p-4 sm:p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Users size={16} className="text-[#00629B] dark:text-sky-400" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-stone-600">Authors & Contributors</span>
+                </div>
+                <span className="text-xs text-stone-400">Department of CSE, JKKNIU</span>
+              </div>
+
+              <div className="mt-3 flex flex-wrap gap-2.5">
+                <span className="chip text-stone-700">1. {r.author_1}</span>
+                <span className="chip !border-[#00629B]/40 !bg-[#00629B]/10 font-semibold text-[#00629B] dark:!border-sky-400/40 dark:!bg-sky-400/10 dark:text-sky-300">
+                  ★ 2. {r.author_2 || 'F.R.M Mohiul Haque Bhuiyan (Self)'}
+                </span>
+                <span className="chip text-stone-700">3. {r.author_3}</span>
+              </div>
+            </div>
+
+            {/* Abstract / Summary */}
+            <div className="mt-6">
+              <p className="label">Research Abstract & Technical Overview</p>
+              <p className="mt-2 text-sm leading-relaxed text-stone-700 md:text-base md:leading-relaxed">
+                {r.abstract}
+              </p>
+            </div>
+
+            {/* Tags */}
+            {tags.length > 0 && (
+              <div className="mt-5 flex flex-wrap gap-2">
+                {tags.map((t) => (
+                  <span key={t} className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+                    #{t}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Conference Logistics & Verification Bar */}
+            <div className="mt-8 grid grid-cols-1 gap-4 border-t border-stone-200/80 pt-6 sm:grid-cols-3">
+              <div className="flex items-start gap-3">
+                <Calendar size={18} className="mt-0.5 shrink-0 text-accent" />
+                <div>
+                  <p className="label">Conference Dates</p>
+                  <p className="mt-1 text-sm font-semibold text-ink">{r.conference_dates || 'November 1–3, 2026'}</p>
+                  <p className="text-xs text-stone-400">Submission: {r.submission_date}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin size={18} className="mt-0.5 shrink-0 text-rose-500" />
+                <div>
+                  <p className="label">Venue & Host</p>
+                  <p className="mt-1 text-sm font-semibold text-ink">{r.venue || "Cox's Bazar, Bangladesh"}</p>
+                  <p className="text-xs text-stone-400">Host: {r.host || 'BUBT'}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Award size={18} className="mt-0.5 shrink-0 text-amber-500" />
+                <div>
+                  <p className="label">Academic Status</p>
+                  <p className="mt-1 text-sm font-semibold text-emerald-600">Accepted for Oral Presentation</p>
+                  <p className="text-xs text-stone-400">IEEE Xplore inclusion follows presentation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </Reveal>
+    </Wrap>
+  )
+}
+
 /* ───────── ICPC Balloons Visual ───────── */
 export const IcpcLogo = ({ className = 'h-10 w-10' }) => (
   <svg viewBox="0 0 100 100" fill="none" className={className} role="img" aria-label="ICPC Balloons">
@@ -381,7 +551,7 @@ export const IcpcLogo = ({ className = 'h-10 w-10' }) => (
   </svg>
 )
 
-/* ───────── § 03 Competitive Programming & ICPC ───────── */
+/* ───────── § 04 Competitive Programming & ICPC ───────── */
 export const CompetitiveProgramming = () => {
   const icpc = ICPC || {
     team: 'JKKNIU Picnic Team',
@@ -404,7 +574,7 @@ export const CompetitiveProgramming = () => {
   return (
     <Wrap
       id="icpc"
-      num="03"
+      num="04"
       kicker="Competitive Programming"
       title="Competitive Programming & ICPC."
       intro="Official standing from the ICPC Asia Dhaka Regional Contest, university team achievements, and algorithmic contest profiles."
@@ -641,12 +811,12 @@ export const CompetitiveProgramming = () => {
   )
 }
 
-/* ───────── § 05 Credentials ───────── */
+/* ───────── § 06 Credentials ───────── */
 const orgGroups = () => Object.entries(ORGANIZATIONS.reduce((m, o) => ((m[o.org] ||= []).push(o), m), {}))
 
 export const Credentials = () => (
   <div className="bg-stone-100/70">
-    <Wrap id="credentials" num="05" kicker="Background" title="Certified, educated, and leading.">
+    <Wrap id="credentials" num="06" kicker="Background" title="Certified, educated, and leading.">
       <h3 className="mb-4 flex items-center gap-2 font-serif text-xl font-semibold"><Award size={20} className="text-accent" /> Appendix A — Certifications</h3>
       <div className="grid gap-4 md:grid-cols-3">
         {CERTIFICATIONS.map((c, i) => (
@@ -697,11 +867,11 @@ export const Credentials = () => (
   </div>
 )
 
-/* ───────── § 04 Projects ───────── */
+/* ───────── § 05 Projects ───────── */
 const PROJECT_ICON = [Database, Activity, Landmark, Terminal]
 
 export const Projects = () => (
-  <Wrap id="projects" num="04" kicker="Case studies" title="Things I've built.">
+  <Wrap id="projects" num="05" kicker="Case studies" title="Things I've built.">
     <div className="grid gap-5 md:grid-cols-3">
       {PROJECTS.map((p, i) => {
         const Icon = PROJECT_ICON[i % PROJECT_ICON.length]
@@ -748,7 +918,7 @@ export function Contact() {
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-accent/30 blur-3xl" aria-hidden />
         <div className="relative grid gap-10 md:grid-cols-2">
           <div>
-            <p className="kicker !text-teal-200 before:!bg-teal-200">§ 06 / End of report</p>
+            <p className="kicker !text-teal-200 before:!bg-teal-200">§ 07 / End of report</p>
             <h2 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">Let's talk software, algorithms or systems.</h2>
             <p className="mt-4 max-w-md text-stone-400">Open to software engineering opportunities, internships, problem solving collaborations, and open-source development.</p>
             <div className="mt-8 space-y-2">

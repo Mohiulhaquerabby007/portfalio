@@ -108,5 +108,6 @@ export function parseData(raw, file = 'data.md') {
     education: parseTable(need(s, 'education', file).body, ['Degree', 'School', 'Period', 'Score'], file, 'Education').map((r) => ({ degree: r.degree, school: r.school, period: r.period, score: r.score })),
     organizations: parseTable(need(s, 'leadership', file).body, ['Role', 'Organization', 'Period'], file, 'Leadership').map((r) => ({ role: r.role, org: r.organization, period: r.period })),
     icpc: s.icpc ? parseKV(s.icpc.body, file) : null,
+    research: s.research ? parseKV(s.research.body, file) : null,
   }
 }

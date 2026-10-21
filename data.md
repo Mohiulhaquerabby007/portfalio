@@ -151,6 +151,26 @@ Linux (Ubuntu), Windows
 | Pioneer Bank | An interactive online banking simulator with account management, transaction logging, and real-time balance calculations. | JavaScript, HTML5, CSS3 | https://github.com/Mohiulhaquerabby007/pioneer-bank |
 | Algorithmic Problem Solving Repository | Solutions to 350+ data structures and algorithmic challenges across LeetCode, CodeChef, and Codeforces. | C++, Python, Algorithms | https://github.com/Mohiulhaquerabby007 |
 
+## Research
+<!-- Accepted Full Research Paper for IEEE i-COSTE 2026 -->
+- title: IoT-Based Low-Cost Intelligent Air-Quality Monitoring and Self-Calibrated Autonomous Purification System
+- paper_id: IEEE_i-COSTE_2026_5374
+- conference: IEEE i-COSTE 2026 — 12th IEEE International Conference on Sustainable Technology and Engineering
+- conference_short: IEEE i-COSTE 2026
+- paper_type: Full Research Paper
+- status: Accepted
+- submission_date: September 5, 2026
+- conference_dates: November 1–3, 2026
+- venue: Best Western Heritage, Cox's Bazar, Bangladesh
+- host: Bangladesh University of Business and Technology (BUBT)
+- author_1: Md. Saurob Bhuyan
+- author_2: F.R.M Mohiul Haque Bhuiyan (Mohiul Haque Rabby)
+- author_3: Md. Sujan Ali
+- conference_url: https://i-coste.org/
+- bubt_url: https://icoste.bubt.edu.bd/
+- tags: IoT, ESP32-S3, Air Quality, EPA AQI, Autonomous Purification, Green Computing
+- abstract: Proposed an IoT-based, low-cost intelligent air-quality monitoring and autonomous purification system powered by an ESP32-S3 microcontroller. The architecture monitors multiple atmospheric pollutants, applies standard EPA-based Air Quality Index (AQI) calculations, incorporates real-time sensor-health monitoring, and drives multi-stage autonomous purification with solar-first power management and remote telemetry.
+
 ## ICPC
 <!-- Verified official participation and standings from https://icpc.bubt.edu.bd/standing.php -->
 - team: JKKNIU Picnic Team
