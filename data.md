@@ -21,6 +21,7 @@
 - university: Jatiya Kabi Kazi Nazrul Islam University, Trishal, Mymensingh
 - github: https://github.com/Mohiulhaquerabby007
 - linkedin: https://www.linkedin.com/in/mohiul-haque-rabby-564737285
+- codeforces: https://codeforces.com/profile/Mohiul_Haque_Rabby
 - email: mohiulhaquerabby1432@gmail.com
 - phone: 01325951983
 - phone_alt: 01336446855
@@ -36,10 +37,10 @@
 ## Hero
 <!-- display_name is the huge outlined name behind your photo (first word / second word go on two lines on phones). -->
 - display_name: Mohiul Rabby
-- tagline: Software Engineer, Executive at Mid-Day Programming Club & CSE Student at JKKNIU.
+- tagline: Codeforces Max 1128 · Executive at Mid-Day Programming Club · CSE at JKKNIU.
 
 ## Summary
-It has always been my passion to learn new things, explore new ideas, and focus on self-development. I have consistently sought every available opportunity to improve my skills. Computer Science & Engineering undergraduate at Jatiya Kabi Kazi Nazrul Islam University (JKKNIU), passionate about software engineering, algorithmic problem solving, and building robust systems. Executive at Mid-Day Programming Club, JKKNIU with hands-on experience across C, C++, Java, and Python. Dedicated to pursuing technical excellence with sincerity, honesty, and hard work.
+It has always been my passion to learn new things, explore new ideas, and focus on self-development. I have consistently sought every available opportunity to improve my skills. Computer Science & Engineering undergraduate at Jatiya Kabi Kazi Nazrul Islam University (JKKNIU), passionate about software engineering, algorithmic problem solving, and building robust systems. Active competitive programmer with 337+ problems solved on Codeforces (max rating 1128) and Executive at Mid-Day Programming Club, JKKNIU. Dedicated to pursuing technical excellence with sincerity, honesty, and hard work.
 
 ## Overview
 <!-- Text for the tiles in the About / Overview section. The Education tile also reads the first row of the Education table. -->
@@ -48,16 +49,16 @@ It has always been my passion to learn new things, explore new ideas, and focus 
 - cgpa_max: 4
 - leadership_role: Executive
 - leadership_text: Mid-Day Programming Club, JKKNIU — organizing programming contests, mentoring students & technical leadership.
-- cp_title: CPS Academy Batch-3 · CodeChef & LeetCode
-- cp_text: Solved 350+ algorithmic problems across LeetCode, CodeChef, HackerRank, StopStalk & TryHackMe.
+- cp_title: Codeforces max rating 1128 · 337+ solves
+- cp_text: Solved 337 problems on Codeforces · Active competitor in Div. 2 / Div. 3 rounds & CPS Academy Batch-3.
 
 ## Stats
 <!-- Value can be a number, or a number with a suffix (550+). Write "auto" to count every contest listed below. -->
 | Value | Label |
 |---|---|
-| 350+ | Coding problems solved |
+| 337+ | Codeforces problems solved |
+| 1128 | Codeforces max rating |
 | 500+ | LinkedIn professional connections |
-| 100+ | LeetCode & CodeChef solves |
 | auto | Contests & achievements listed |
 
 ## Skills
@@ -80,9 +81,9 @@ Linux (Ubuntu), Windows
 | gold | 5.00 | HSC GPA 5.00 | Agricultural Univ. College |
 | gold | 5.00 | SSC GPA 5.00 | Shaheed Smriti Bidyapeeth |
 | gold | 5.00 | JSC GPA 5.00 | Shaheed Smriti Bidyapeeth |
+| indigo | 1128 | Codeforces Rating | Max Rating · 337 Solved |
 | teal | Exec | Mid-Day Prog. Club | Executive Leadership |
-| indigo | Solver | CodeChef & LeetCode | Algorithmic Problem Solving |
-| bronze | Active | TryHackMe & HTB | Cyber Security Labs |
+| bronze | Batch-3 | CPS Academy CP | Competitive Programming |
 
 ## Contests
 <!-- Newest first is not required — the site sorts them by year. Keep the three sub-headings. -->
@@ -105,6 +106,8 @@ Linux (Ubuntu), Windows
 ### Programming
 | Event | Result | Date |
 |---|---|---|
+| Codeforces Rated Contests (Div. 2 & Div. 3) | Max Rating 1128 | 2024–2026 |
+| Codeforces Problemset Archive | 337 Problems Solved | 2024–Present |
 | CPS Academy Batch-3 Contest Series | Active Contestant | Jan 2024 – Present |
 | CodeChef Starters & Rated Contests | Participant | 2024–2025 |
 | LeetCode Biweekly & Weekly Contests | Participant | 2024–2025 |

@@ -9,6 +9,14 @@ import {
   SKILLS, SKILL_GROUPS, STATS,
 } from '../data'
 
+export const CodeforcesIcon = ({ size = 16, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <rect x="2" y="9.5" width="4.5" height="11.5" rx="1.5" fill="#FFC107" />
+    <rect x="9.75" y="3.5" width="4.5" height="17.5" rx="1.5" fill="#2196F3" />
+    <rect x="17.5" y="14" width="4.5" height="7" rx="1.5" fill="#F44336" />
+  </svg>
+)
+
 /* ───────── helpers ───────── */
 export const Reveal = ({ children, delay = 0, className = '' }) => (
   <motion.div className={className} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
@@ -93,8 +101,13 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-3 md:justify-end">
             <a href="#achievements" className="btn bg-ink text-paper hover:bg-teal-800">See achievements <ArrowUpRight size={16} /></a>
             <a href="#contact" className="btn border border-stone-300 bg-surface hover:border-ink">Get in touch</a>
-            {[[Github, PROFILE.github, 'GitHub'], [Linkedin, PROFILE.linkedin, 'LinkedIn'], [Mail, `mailto:${PROFILE.email}`, 'Email']].map(([Icon, href, label]) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="grid h-11 w-11 place-items-center rounded-full border border-stone-200 bg-surface text-stone-600 transition hover:border-accent hover:text-accent"><Icon size={18} /></a>
+            {[
+              [Github, PROFILE.github, 'GitHub'],
+              [Linkedin, PROFILE.linkedin, 'LinkedIn'],
+              ...(PROFILE.codeforces ? [[CodeforcesIcon, PROFILE.codeforces, 'Codeforces']] : []),
+              [Mail, `mailto:${PROFILE.email}`, 'Email'],
+            ].map(([Icon, href, label]) => (
+              <a key={label} href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={label} className="grid h-11 w-11 place-items-center rounded-full border border-stone-200 bg-surface text-stone-600 transition hover:border-accent hover:text-accent"><Icon size={18} /></a>
             ))}
           </div>
         </div>
@@ -211,6 +224,7 @@ export const About = () => (
           <p className="mt-2 font-serif text-xl font-semibold">{OVERVIEW.cp_title}</p>
           <p className="mt-2 text-sm text-stone-600">{OVERVIEW.cp_text}</p>
           <div className="mt-4 flex flex-wrap gap-2">
+            {PROFILE.codeforces && <a href={PROFILE.codeforces} target="_blank" rel="noreferrer" className="chip !px-2.5 !py-1 !text-xs hover:border-accent hover:text-accent font-medium">Codeforces ↗</a>}
             {PROFILE.leetcode && <a href={PROFILE.leetcode} target="_blank" rel="noreferrer" className="chip !px-2.5 !py-1 !text-xs hover:border-accent hover:text-accent font-medium">LeetCode ↗</a>}
             {PROFILE.codechef && <a href={PROFILE.codechef} target="_blank" rel="noreferrer" className="chip !px-2.5 !py-1 !text-xs hover:border-accent hover:text-accent font-medium">CodeChef ↗</a>}
             {PROFILE.tryhackme && <a href={PROFILE.tryhackme} target="_blank" rel="noreferrer" className="chip !px-2.5 !py-1 !text-xs hover:border-accent hover:text-accent font-medium">TryHackMe ↗</a>}
@@ -459,7 +473,11 @@ export function Contact() {
               {PROFILE.phone && <a href={`tel:${PROFILE.phone}`} className="flex items-center gap-2 font-mono text-sm text-teal-100 hover:text-white"><Phone size={16} /> {PROFILE.phone} {PROFILE.phone_alt ? `· ${PROFILE.phone_alt}` : ''}</a>}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              {[[Github, PROFILE.github, 'GitHub'], [Linkedin, PROFILE.linkedin, 'LinkedIn']].map(([Icon, href, label]) => (
+              {[
+                [Github, PROFILE.github, 'GitHub'],
+                [Linkedin, PROFILE.linkedin, 'LinkedIn'],
+                ...(PROFILE.codeforces ? [[CodeforcesIcon, PROFILE.codeforces, 'Codeforces']] : []),
+              ].map(([Icon, href, label]) => (
                 <a key={label} href={href} target="_blank" rel="noreferrer" className="btn border border-white/20 !py-2.5 hover:bg-white hover:!text-[#0c0a09]"><Icon size={16} /> {label}</a>
               ))}
             </div>
